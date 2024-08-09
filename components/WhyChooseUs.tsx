@@ -11,9 +11,7 @@ import Icon from "./Icon";
 const WhyChooseUs = () => {
   return (
     <div className="container mx-auto">
-      <h2 className="text-3xl font-semibold mb-10">
-        Чому нас обирають
-      </h2>
+      <h2 className="text-3xl font-semibold mb-10">Чому нас обирають</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="flex">
           <Icon
@@ -59,9 +57,9 @@ const WhyChooseUs = () => {
             </p>
           </div>
         </div>
-        {/* Обертка для центровки последних двух элементов с отступами */}
-        <div className="lg:col-span-3 flex justify-center lg:justify-between">
-          <div className="flex lg:ml-[209px]">
+        {/* Обертка для центровки последних двух элементов только на декстопе */}
+        <div className="lg:col-span-3 flex flex-col lg:flex-row justify-center lg:justify-between">
+          <div className="flex mb-8 lg:mb-0 lg:ml-[209px]">
             <Icon
               icon={Banknote}
               size={100}
@@ -86,8 +84,8 @@ const WhyChooseUs = () => {
                 Професійна консультація
               </h3>
               <p className="text-gray-700">
-                Наші експерти завжди готові надати кваліфіковану допомогу у виборі
-                меблів.
+                Наші експерти завжди готові надати кваліфіковану допомогу у
+                виборі меблів.
               </p>
             </div>
           </div>
