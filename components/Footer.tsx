@@ -7,7 +7,7 @@ import Icon from "./Icon";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-gray-800 text-white py-5">
       <div className="container mx-auto flex justify-between items-start footer-container">
         <div className="flex flex-col">
           <Image
@@ -15,6 +15,7 @@ const Footer: React.FC = () => {
             alt="Тера Меблі"
             width={150}
             height={50}
+            className="pb-5"
           />
         </div>
 

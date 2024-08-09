@@ -10,74 +10,87 @@ import Icon from "./Icon";
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-8">
-      <div className="container mx-auto">
-        <h2 className="text-center text-lg font-semibold mb-8">
-          Чому нас обирають
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-          <div className="flex flex-col items-center">
-            <Icon
-              icon={SwatchBook}
-              size={100}
-              className="w-12 h-12 mb-4  text-red-500"
-            />
-            <h3 className="text-md font-semibold">Широкий асортимент</h3>
-            <p className="text-gray-600">
+    <div className="container mx-auto">
+      <h2 className="text-3xl font-semibold mb-12 ">
+        Чому нас обирають
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex">
+          <Icon
+            icon={SwatchBook}
+            size={100}
+            className="w-24 h-24 mr-4 text-red-500 stroke-1"
+          />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Широкий асортимент</h3>
+            <p className="text-gray-700">
               Ми пропонуємо великий вибір меблів для будь-яких кімнат та стилів
               інтер’єру.
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <Icon
-              icon={HandHeart}
-              size={100}
-              className="w-12 h-12 mb-4 text-red-500"
-            />
-            <h3 className="text-md font-semibold">Індивідуальний підхід</h3>
-            <p className="text-gray-600">
-              Ми завжди готові надати персональні поради та створити меблі на
+        </div>
+        <div className="flex">
+          <Icon
+            icon={HandHeart}
+            size={100}
+            className="w-24 h-24 mr-4 text-red-500 stroke-1"
+          />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">
+              Індивідуальний підхід
+            </h3>
+            <p className="text-gray-700">
+              Ми завжди готові врахувати ваші побажання та створити меблі на
               замовлення.
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <Icon
-              icon={ShieldCheck}
-              size={100}
-              className="w-12 h-12 mb-4  text-red-500"
-            />
-            <h3 className="text-md font-semibold">Гарантія якості</h3>
-            <p className="text-gray-600">
-              Ми завжди готові гарантувати якість і довговічність нашої
-              продукції.
+        </div>
+        <div className="flex">
+          <Icon
+            icon={ShieldCheck}
+            size={100}
+            className="w-24 h-24 mr-4 text-red-500 stroke-1"
+          />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Гарантія якості</h3>
+            <p className="text-gray-700">
+              Ми завжди готові врахувати ваші побажання та створити меблі на
+              замовлення.
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <Icon
-              icon={Banknote}
-              size={100}
-              className="w-12 h-12 mb-4  text-red-500"
-            />
-            <h3 className="text-md font-semibold">Доступність</h3>
-            <p className="text-gray-600">
-              Ми пропонуємо конкурентоспроможні ціни та знижки.
+        </div>
+        <div className="flex">
+          <Icon
+            icon={Banknote}
+            size={100}
+            className="w-24 h-24 mr-4 text-red-500 stroke-1"
+          />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Доступність</h3>
+            <p className="text-gray-700">
+              Ми прагнемо запропонувати конкурентоспроможні ціни без шкоди для
+              якості.
             </p>
           </div>
-          <div className="flex flex-col items-center">
-            <Icon
-              icon={Speech}
-              size={100}
-              className="w-12 h-12 mb-4 text-red-500"
-            />
-            <h3 className="text-md font-semibold">Професійна консультація</h3>
-            <p className="text-gray-600">
-              Наші експерти завжди готові надати експертну допомогу у виборі
+        </div>
+        <div className="flex">
+          <Icon
+            icon={Speech}
+            size={100}
+            className="w-24 h-24 mr-4 text-red-500 stroke-1"
+          />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">
+              Професійна консультація
+            </h3>
+            <p className="text-gray-700">
+              Наші експерти завжди готові надати кваліфіковану допомогу у виборі
               меблів.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
