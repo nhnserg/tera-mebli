@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (max-width: 767px) {
+  .footer-container {
+    @apply p-4 flex flex-col items-center text-center;
+  }
+
+  .footer-space-x-4 > * + * {
+    @apply ml-4;
+  }
+
+  .footer-hidden {
+    display: none;
+  }
+
+  .footer-mb-6 {
+    @apply mb-4;
+  }
+}
