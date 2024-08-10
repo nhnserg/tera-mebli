@@ -4,21 +4,23 @@ import Image from "next/image";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 import Icon from "./Icon";
-import logo from '../public/assets/logo.webp'
-import tiktok from '../public/assets/icons/Social.svg'
+import logo from "../public/assets/logo.webp";
+import tiktok from "../public/assets/icons/Social.svg";
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 text-white py-5">
       <div className="container mx-auto flex justify-between items-start footer-container">
         <div className="flex flex-col">
-          <Image
-            src={logo}
-            alt="Тера Меблі"
-            width={150}
-            height={50}
-            className="pb-5"
-          />
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Тера Меблі"
+              width={150}
+              height={50}
+              className="pb-5"
+            />
+          </Link>
         </div>
 
         <div className="flex flex-col">
