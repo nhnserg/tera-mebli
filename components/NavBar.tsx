@@ -52,7 +52,7 @@ function NavBar() {
             <div className="flex items-center space-x-12">
               {/* <SelectBar /> */}
               <Link
-                href="/catalog"
+                href="/"
                 className="flex flex-col items-center text-center group"
               >
                 <Icon icon={LayoutDashboard} size={24} color="white" />
