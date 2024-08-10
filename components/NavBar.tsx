@@ -11,16 +11,23 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import Icon from "./Icon";
-import MenuModal from "./MenuModal";
+import MenuModal from "./Modal"; // Импортируем модальное меню
+import AuthModal from "./AuthModal"; // Импортируем новый компонент AuthModal
 import SearchBar from "./SearchBar";
-import logo from '../public/assets/logo.webp'
-// import { SelectBar } from "./SelectBar";
+import logo from "../public/assets/logo.webp";
 
 function NavBar() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openMenuModal = () => setIsMenuModalOpen(true);
+  const closeMenuModal = () => setIsMenuModalOpen(false);
+
+  const openAuthModal = () => {
+    setIsAuthModalOpen(true);
+    closeMenuModal();
+  };
+  const closeAuthModal = () => setIsAuthModalOpen(false);
 
   return (
     <>
@@ -29,22 +36,17 @@ function NavBar() {
           {/* Логотип и мобильное меню */}
           <div className="flex items-center justify-between w-full md:w-auto">
             <Link href="/" className="pr-6">
-              <Image
-                src={logo}
-                width={141}
-                height={39}
-                alt="Тера Меблі" />
+              <Image src={logo} width={141} height={39} alt="Тера Меблі" />
             </Link>
             <div className="flex md:hidden space-x-4">
               <Link href="/basket" className="text-white">
                 <Icon icon={ShoppingCart} size={24} />
               </Link>
-              <button onClick={openModal} className="text-white">
+              <button onClick={openMenuModal} className="text-white">
                 <Icon icon={Menu} size={24} />
               </button>
             </div>
           </div>
-
           {/* Десктопное меню и поисковая строка */}
           <div className="hidden md:flex flex-grow items-center space-x-6">
             <div className="flex items-center space-x-12">
@@ -70,13 +72,13 @@ function NavBar() {
             </div>
 
             <div className="flex items-center space-x-12">
-              <Link
-                href="/"
+              <button
+                onClick={openAuthModal}
                 className="flex flex-col items-center text-center group"
               >
                 <Icon icon={User} size={24} className="mb-1" />
                 <span>Кабінет</span>
-              </Link>
+              </button>
               <Link
                 href="/favorites"
                 className="flex flex-col items-center text-center group"
@@ -95,7 +97,8 @@ function NavBar() {
           </div>
         </div>
       </header>
-      <MenuModal show={isModalOpen} onClose={closeModal} />
+      <MenuModal show={isMenuModalOpen} onClose={closeMenuModal}></MenuModal>
+      <AuthModal show={isAuthModalOpen} onClose={closeAuthModal} />
     </>
   );
 }
