@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 import Icon from "./Icon";
+import logo from '../public/assets/logo.webp'
+import tiktok from '../public/assets/icons/Social.svg'
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +13,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto flex justify-between items-start footer-container">
         <div className="flex flex-col">
           <Image
-            src="/assets/logo.webp"
+            src={logo}
             alt="Тера Меблі"
             width={150}
             height={50}
@@ -70,7 +72,7 @@ const Footer: React.FC = () => {
             </Link>
             <Link href="#" className="text-gray-300 hover:text-white">
               <Image
-                src="/assets/icons/Social.svg"
+                src={tiktok}
                 alt="tiktok"
                 width={16}
                 height={16}

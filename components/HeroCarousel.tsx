@@ -2,13 +2,18 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import mebel1 from "../public/assets/images/mebel_1.jpg";
+import mebel2 from "../public/assets/images/mebel2.webp";
+import mebel3 from "../public/assets/images/mebel3.webp";
+import mebel4 from "../public/assets/images/krovat.jpeg";
+import mebel5 from "../public/assets/images/testphoto.webp";
 
 const slides = [
-  { id: 1, src: "/assets/images/mebel_1.jpg", alt: "Slide 1" },
-  { id: 2, src: "/assets/images/mebel2.webp", alt: "Slide 2" },
-  { id: 3, src: "/assets/images/mebel3.webp", alt: "Slide 3" },
-  { id: 4, src: "/assets/images/krovat.jpeg", alt: "Slide 4" },
-  { id: 5, src: "/assets/images/testphoto.webp", alt: "Slide 5" },
+  { id: 1, src: mebel1, alt: "Slide 1" },
+  { id: 2, src: mebel2, alt: "Slide 2" },
+  { id: 3, src: mebel3, alt: "Slide 3" },
+  { id: 4, src: mebel4, alt: "Slide 4" },
+  { id: 5, src: mebel5, alt: "Slide 5" },
 ];
 
 const HeroCarousel = () => {
