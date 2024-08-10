@@ -13,9 +13,10 @@ import {
 import Icon from "./Icon";
 import MenuModal from "./MenuModal";
 import SearchBar from "./SearchBar";
+import logo from '../public/assets/logo.webp'
 // import { SelectBar } from "./SelectBar";
 
-const NavBar = () => {
+function NavBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -29,11 +30,10 @@ const NavBar = () => {
           <div className="flex items-center justify-between w-full md:w-auto">
             <Link href="/" className="pr-6">
               <Image
-                src="/assets/logo.webp"
+                src={logo}
                 width={141}
                 height={39}
-                alt="Тера Меблі"
-              />
+                alt="Тера Меблі" />
             </Link>
             <div className="flex md:hidden space-x-4">
               <Link href="/basket" className="text-white">
@@ -98,6 +98,6 @@ const NavBar = () => {
       <MenuModal show={isModalOpen} onClose={closeModal} />
     </>
   );
-};
+}
 
 export default NavBar;
