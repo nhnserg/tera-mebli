@@ -11,10 +11,10 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import Icon from "./Icon";
-import MenuModal from "./Modal"; // Импортируем модальное меню
-import AuthModal from "./AuthModal"; // Импортируем новый компонент AuthModal
+import AuthModal from "./AuthModal"; 
 import SearchBar from "./SearchBar";
 import logo from "../public/assets/logo.webp";
+import MenuModal from "./MenuModal";
 
 function NavBar() {
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
@@ -52,7 +52,7 @@ function NavBar() {
             <div className="flex items-center space-x-12">
               {/* <SelectBar /> */}
               <Link
-                href="/"
+                href="/catalog"
                 className="flex flex-col items-center text-center group"
               >
                 <Icon icon={LayoutDashboard} size={24} color="white" />

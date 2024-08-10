@@ -5,7 +5,7 @@ import { LayoutDashboard, Phone, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import Modal from "./Modal";
 
-// Типизация пропсов для MenuModal
+
 interface MenuModalProps {
   show: boolean;
   onClose: () => void;
