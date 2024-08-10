@@ -10,7 +10,7 @@ import Icon from "./Icon";
 
 const WhyChooseUs = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mb-96 mx-auto">
       <h2 className="text-3xl font-semibold mb-10">Чому нас обирають</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="flex">
