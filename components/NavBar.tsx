@@ -15,6 +15,7 @@ import AuthModal from "./AuthModal";
 import SearchBar from "./SearchBar";
 import logo from "../public/assets/logo.webp";
 import MenuModal from "./MenuModal";
+// import { SelectBar } from "./SelectBar";
 
 function NavBar() {
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
@@ -87,7 +88,7 @@ function NavBar() {
                 <span>Улюбленне</span>
               </Link>
               <Link
-                href="/basket"
+                href="/cart"
                 className="flex flex-col items-center text-center group"
               >
                 <Icon icon={ShoppingCart} size={24} className="mb-1" />

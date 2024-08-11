@@ -1,4 +1,4 @@
-import { signIn } from "../app/api/auth/auth";
+import { signIn } from "../lib/auth";
 
 export default function SignIn() {
   return (
@@ -12,4 +12,3 @@ export default function SignIn() {
     </form>
   );
 }
- 
