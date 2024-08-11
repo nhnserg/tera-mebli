@@ -1,4 +1,4 @@
-import HeroCarousel from "@/components/HeroCarousel";
+ import HeroCarousel from "@/components/HeroCarousel";
 import PopularCategories from "@/components/PopularCategories";
 import Stages from "@/components/Stages";
 import WhyChooseUs from "@/components/WhyChooseUs";
