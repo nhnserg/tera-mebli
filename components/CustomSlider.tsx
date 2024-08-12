@@ -47,9 +47,6 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
                       {product.label}
                     </span>
                   )}
-                  <span className="bg-red-500 text-xs text-white px-2 py-1 rounded">
-                    ЗНИЖКА
-                  </span>
                 </div>
                 <div className="absolute top-2 right-2 flex flex-col space-y-2">
                   <span className="bg-stone-300 p-1 rounded-full">
