@@ -15,5 +15,10 @@ export interface UserDocument {
 declare module "next-auth" {
   interface Session {
     user: UserDocument;
+    product: Product;
   }
 }
+
+// types.ts
+
+

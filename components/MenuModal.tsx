@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 import Icon from "./Icon";
-import { LayoutDashboard, Phone, ShoppingCart } from "lucide-react";
+import { LayoutDashboard, Phone, Heart } from "lucide-react";
 import Link from "next/link";
 import Modal from "./Modal";
-
 
 interface MenuModalProps {
   show: boolean;
@@ -25,9 +24,9 @@ const MenuModal: React.FC<MenuModalProps> = ({ show, onClose }) => {
             <Icon icon={Phone} size={24} className="mr-2" />
             Контакти
           </Link>
-          <Link href="/basket" className="flex items-center">
-            <Icon icon={ShoppingCart} size={24} className="mr-2" />
-            Кошик
+          <Link href="/favorites" className="flex items-center">
+            <Icon icon={Heart} size={24} className="mr-2" />
+            Улюбленне
           </Link>
         </nav>
       </div>
