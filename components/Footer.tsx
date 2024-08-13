@@ -9,7 +9,7 @@ import tiktok from "../public/assets/icons/Social.svg";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white py-5">
+    <footer className="bg-[#47464B] text-white py-5">
       <div className="container mx-auto flex justify-between items-start footer-container">
         <div className="flex flex-col">
           <Link href="/">

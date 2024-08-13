@@ -13,7 +13,7 @@ const Home = () => {
       name: 'Двоярусне ліжко "Аляска"',
       brand: "MebiGrand",
       price: "12,499 грн.",
-      label: "HIT",
+      label: "Акція",
       labelColor: "bg-blue-500",
     },
     {
@@ -43,7 +43,7 @@ const Home = () => {
   ];
 
   return (
-    <main>
+    <main className="bg-[#F8F8F8]">
       <HeroCarousel />
       <div className="container p-6">
         <h2 className="text-2xl font-bold mb-6">Нові товари</h2>

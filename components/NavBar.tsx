@@ -31,7 +31,7 @@ function NavBar() {
 
   return (
     <>
-      <header className="bg-red-500 p-4 text-white">
+      <header className="bg-[#D81C1B] p-4 text-white">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full md:w-auto">
             <Link href="/" className="pr-6">
