@@ -45,7 +45,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto mt-5">
+    <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto mt-5 px-4 md:px-6">
       <div className="hidden md:block w-1/4 p-4 bg-[#F8F8F8]">
         <ul>
           {categories.map((category, index) => (
@@ -59,7 +59,6 @@ const HeroCarousel = () => {
         </ul>
       </div>
       <div className="w-full md:w-3/4 relative">
-        {/* Set height for the container */}
         <div className="relative h-full min-h-[400px] overflow-hidden rounded-lg">
           {slides.map((slide, index) => (
             <div

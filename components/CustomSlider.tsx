@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Icon from "./Icon";
 import { ShoppingCart, MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
@@ -11,8 +11,23 @@ interface CustomSliderProps {
 }
 
 const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
-  const slidesPerView = 4;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); 
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const slidesPerView = isSmallScreen ? 2 : 4;
 
   const totalProducts = products.length;
 
@@ -40,8 +55,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
         {itemsToShow.map((product, index) => (
           <div
             key={`${product.id}-${index}`}
-            className="p-2 md:p-4"
-            style={{ width: "25%" }}
+            className={`p-2 md:p-4 ${isSmallScreen ? "w-1/2" : "w-1/4"}`}
           >
             <div className="border rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="relative w-full h-48 md:h-64 lg:h-72">
