@@ -1,8 +1,8 @@
+"use client";
 import CustomSlider from "@/components/CustomSlider";
 import HeroCarousel from "@/components/HeroCarousel";
 import PopularCategories from "@/components/PopularCategories";
 import Stages from "@/components/Stages";
-
 import WhyChooseUs from "@/components/WhyChooseUs";
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
       imageSrc: "/assets/images/krovat.jpeg",
       name: 'Двоспальне ліжко "Прованс"',
       price: "12,499 грн.",
-      oldPrice: "10,000грн",
+      oldPrice: "10,000 грн",
       label: "Знижка",
       labelColor: "bg-red-500",
     },
@@ -39,6 +39,30 @@ const Home = () => {
       imageSrc: "/assets/images/krovat.jpeg",
       name: 'Елегантне ліжко "Міро"',
       price: "12,499 грн.",
+    },
+    {
+      id: 5,
+      imageSrc: "/assets/images/krovat.jpeg",
+      name: "Ліжко",
+      price: "10,000 грн.",
+      label: "ХІТ",
+      labelColor: "bg-[#4E3A9F]",
+    },
+    {
+      id: 6,
+      imageSrc: "/assets/images/krovat.jpeg",
+      name: "Ліжко",
+      price: "10,000 грн.",
+      label: "ХІТ",
+      labelColor: "bg-[#4E3A9F]",
+    },
+    {
+      id: 7,
+      imageSrc: "/assets/images/krovat.jpeg",
+      name: "Ліжко",
+      price: "10,000 грн.",
+      label: "ХІТ",
+      labelColor: "bg-[#4E3A9F]",
     },
   ];
 

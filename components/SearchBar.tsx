@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 import Icon from "./Icon";
@@ -12,7 +13,7 @@ const SearchBar: React.FC = () => {
   const handleSearch = () => {
     if (query.trim()) {
       console.log("Searching for:", query);
-      setIsMobileSearchVisible(false); // Hide input after search
+      setIsMobileSearchVisible(false);
     }
   };
 
@@ -26,7 +27,6 @@ const SearchBar: React.FC = () => {
     setIsMobileSearchVisible((prev) => !prev);
   };
 
-  // Close search when clicking outside the input
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -47,12 +47,13 @@ const SearchBar: React.FC = () => {
   }, [isMobileSearchVisible]);
 
   return (
-    <div className="relative max-w-sm mx-auto">
-      <div className="flex items-center">
-        {/* Mobile view for screens up to 767px */}
+    <div className="relative w-full">
+      <div className="flex items-center w-full">
+        {/* Mobile view (less than 768px) */}
         <div className="flex md:hidden items-center w-full">
           {isMobileSearchVisible ? (
             <input
+              ref={inputRef}
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -66,44 +67,17 @@ const SearchBar: React.FC = () => {
               <Icon icon={Search} size={24} className="text-white" />
             </div>
           )}
-          {isMobileSearchVisible && (
-            <div className="ml-2 cursor-pointer" onClick={handleSearch}>
-              <Icon icon={Search} size={24} className="text-blue-500" />
-            </div>
-          )}
         </div>
 
-        {/* Tablet view from 768px to 1024px */}
-        <div className="hidden md:flex lg:hidden items-center w-full flex-col">
-          <div
-            className="flex flex-col items-center cursor-pointer"
-            onClick={toggleSearchInput}
-          >
-            <Icon icon={Search} size={24} className="text-white" />
-            <span className="text-white">Пошук</span>
-          </div>
-          {isMobileSearchVisible && (
-            <input
-              ref={inputRef}
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className="mt-2 pl-2 py-2 border-gray-300 rounded max-w-[400px] min-w-[150px] focus:outline-none focus:ring-2 focus:ring-blue-500 text-black z-50 absolute top-full left-1 md:left-auto md:right-auto"
-              placeholder="Пошук..."
-              autoFocus
-            />
-          )}
-        </div>
-
-        {/* Desktop view for screens larger than 1024px */}
-        <div className="hidden lg:flex items-center w-full">
+        {/* Tablet and desktop view (768px and above) */}
+        <div className="hidden md:flex items-center w-full">
           <input
+            ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="pl-2 py-2 border-gray-300 rounded w-full max-w-[600px] focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+            className="pl-2 py-2 border-gray-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
             placeholder="Пошук..."
           />
           <div

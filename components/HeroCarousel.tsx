@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import mebel1 from "../public/assets/images/mebel_1.jpg";
@@ -16,6 +15,19 @@ const slides = [
   { id: 5, src: mebel5, alt: "Slide 5" },
 ];
 
+const categories = [
+  "Кухонні меблі",
+  "Меблі вітальні",
+  "Меблі спальні",
+  "Меблі для передпокою",
+  "Офісні меблі",
+  "Шафи",
+  "М'які меблі",
+  "Ліжка",
+  "Матраци",
+  "Комоди і тумби",
+];
+
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -29,52 +41,47 @@ const HeroCarousel = () => {
 
   useEffect(() => {
     const intervalId = setInterval(nextSlide, 7000);
-
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto mt-5">
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              layout="fill"
-              objectFit="cover"
-            />
-            {/* Banner */}
-            <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white text-sm rounded-tr-lg">
-              Купуйте будь-яке крісло або диван і отримайте подушку у подарунок
-            </div>
-          </div>
-        ))}
+    <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto mt-5">
+      <div className="hidden md:block w-1/4 p-4 bg-[#F8F8F8]">
+        <ul>
+          {categories.map((category, index) => (
+            <li
+              key={index}
+              className="py-2 text-lg hover:text-blue-600 cursor-pointer"
+            >
+              {category}
+            </li>
+          ))}
+        </ul>
       </div>
-      {/* Slider controls */}
-      <div className="absolute bottom-4 right-4 z-30 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`relative w-4 h-4 rounded-full border-2 transition duration-300 ease-in-out ${
-              index === currentSlide
-                ? "bg-white border-white"
-                : "bg-transparent border-gray-400"
-            }`}
-            onClick={() => setCurrentSlide(index)}
-          >
-            {index === currentSlide && (
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="w-2.5 h-2.5 bg-white rounded-full"></span>
-              </span>
-            )}
-          </button>
-        ))}
+      <div className="w-full md:w-3/4 relative">
+        {/* Set height for the container */}
+        <div className="relative h-full min-h-[400px] overflow-hidden rounded-lg">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                layout="fill"
+                objectFit="cover"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white text-sm rounded-tr-lg">
+                Купуйте будь-яке крісло або диван і отримайте подушку у
+                подарунок
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Icon from "./Icon";
-import { Heart, ShoppingCart, MoveLeft, MoveRight } from "lucide-react";
+import { ShoppingCart, MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { Product } from "@/types/types";
 
@@ -11,32 +11,30 @@ interface CustomSliderProps {
 }
 
 const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const initialVisibleCount = 4;
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const handleNext = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % Math.ceil(products.length / 2)
-    );
+    if (visibleCount < products.length) {
+      setVisibleCount((prevCount) => Math.min(prevCount + 1, products.length));
+    }
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + Math.ceil(products.length / 2)) %
-        Math.ceil(products.length / 2)
-    );
+    if (visibleCount > initialVisibleCount) {
+      setVisibleCount((prevCount) =>
+        Math.max(prevCount - 1, initialVisibleCount)
+      );
+    }
   };
+
+  const itemsToShow = products.slice(0, visibleCount);
 
   return (
     <div className="relative overflow-hidden">
-      <div
-        className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 transition-transform duration-500"
-        style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-        }}
-      >
-        {products.map((product) => (
-          <div key={product.id} className="p-2 md:p-4">
+      <div className="flex transition-transform duration-500">
+        {itemsToShow.map((product) => (
+          <div key={product.id} className="p-2 md:p-4" style={{ width: "25%" }}>
             <div className="border rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
               <div className="relative w-full h-48 md:h-64 lg:h-72">
                 <Image
@@ -54,13 +52,6 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
                       {product.label}
                     </span>
                   )}
-                </div>
-                <div className="absolute top-2 right-2 flex flex-col space-y-2">
-                  <span className="p-1 rounded-full backdrop-blur-md">
-                    <Link href="/favorites">
-                      <Icon icon={Heart} size={24} />
-                    </Link>
-                  </span>
                 </div>
               </div>
               <div className="p-4 flex flex-col justify-between flex-grow">

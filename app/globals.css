@@ -25,3 +25,35 @@
     @apply mb-4;
   }
 }
+
+/* swiper */
+/* styles/globals.css */
+
+@layer components {
+  .swiper-container {
+    @apply w-full; /* Ширина контейнера Swiper */
+  }
+
+  .swiper-slide {
+    @apply flex items-center justify-center; /* Центрирование содержимого */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply absolute top-1/2 z-10 w-10 h-10 bg-gray-800 bg-opacity-50 text-white flex items-center justify-center cursor-pointer rounded-full;
+    /* Настройка кнопок навигации */
+  }
+
+  .swiper-button-prev {
+    @apply left-2;
+  }
+
+  .swiper-button-next {
+    @apply right-2;
+  }
+
+  .swiper-button-next::after, 
+  .swiper-button-prev::after {
+    @apply text-lg; /* Размер иконок */
+  }
+}

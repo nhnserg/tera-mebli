@@ -2,19 +2,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Menu,
-  Phone,
-  User,
-  Heart,
-  ShoppingCart,
-  LayoutDashboard,
-} from "lucide-react";
+import { Menu, Phone, ShoppingCart, LayoutDashboard } from "lucide-react";
 import Icon from "./Icon";
 import AuthModal from "./AuthModal";
 import SearchBar from "./SearchBar";
 import logo from "../public/assets/logo.webp";
 import MenuModal from "./MenuModal";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { SelectBar } from "./SelectBar";
 
 function NavBar() {
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
@@ -50,13 +45,19 @@ function NavBar() {
           </div>
           <div className="hidden md:flex flex-grow items-center justify-between space-x-6">
             <div className="flex items-center space-x-12">
+              <SelectBar />
               <Link
                 href="/catalog"
-                className="flex flex-col items-center  text-center group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
+                className="flex flex-col items-center text-center group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
               >
                 <Icon icon={LayoutDashboard} size={24} />
                 <span>Каталог</span>
               </Link>
+            </div>
+            <div className="flex-grow mx-6">
+              <SearchBar />
+            </div>
+            <div className="flex items-center space-x-12">
               <Link
                 href="/contacts"
                 className="flex flex-col items-center font-semibold text-center group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
@@ -64,32 +65,11 @@ function NavBar() {
                 <Icon icon={Phone} size={24} />
                 <span>Контакти</span>
               </Link>
-            </div>
-
-            <div className="flex-grow max-w-sm">
-              <SearchBar />
-            </div>
-
-            <div className="flex items-center space-x-12">
-              <button
-                onClick={openAuthModal}
-                className="flex flex-col items-center text-center font-semibold group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
-              >
-                <Icon icon={User} size={24} className="mb-1" />
-                <span>Кабінет</span>
-              </button>
-              <Link
-                href="/favorites"
-                className="flex flex-col items-center text-center font-semibold group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200 "
-              >
-                <Icon icon={Heart} size={24} className="mb-1" />
-                <span>Улюбленне</span>
-              </Link>
               <Link
                 href="/cart"
                 className="flex flex-col items-center text-center font-semibold group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
               >
-                <Icon icon={ShoppingCart} size={24} className="mb-1  " />
+                <Icon icon={ShoppingCart} size={24} className="mb-1" />
                 <span>Кошик</span>
               </Link>
             </div>

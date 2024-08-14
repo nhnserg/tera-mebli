@@ -11,15 +11,17 @@
   "dependencies": {
     "@headlessui/react": "^2.1.2",
     "axios": "^1.7.3",
-    "i18next": "^23.12.2",
+    "i18next": "^23.12.3",
     "lucide-react": "^0.427.0",
     "next": "^14.2.5",
     "next-auth": "^5.0.0-beta.20",
     "next-i18next": "^15.3.1",
+    "next-intl": "^3.17.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.0.1",
-    "sharp": "^0.33.4"
+    "sharp": "^0.33.4",
+    "swiper": "^11.1.9"
   },
   "devDependencies": {
     "@types/node": "^20",
