@@ -11,38 +11,46 @@ interface CustomSliderProps {
 }
 
 const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
-  const initialVisibleCount = 4;
-  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
+  const slidesPerView = 4;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const totalProducts = products.length;
 
   const handleNext = () => {
-    if (visibleCount < products.length) {
-      setVisibleCount((prevCount) => Math.min(prevCount + 1, products.length));
-    }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalProducts);
   };
 
   const handlePrev = () => {
-    if (visibleCount > initialVisibleCount) {
-      setVisibleCount((prevCount) =>
-        Math.max(prevCount - 1, initialVisibleCount)
-      );
-    }
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + totalProducts) % totalProducts
+    );
   };
 
-  const itemsToShow = products.slice(0, visibleCount);
+  const itemsToShow = [
+    ...products.slice(currentIndex, currentIndex + slidesPerView),
+    ...products.slice(
+      0,
+      Math.max(0, currentIndex + slidesPerView - totalProducts)
+    ),
+  ];
 
   return (
     <div className="relative overflow-hidden">
-      <div className="flex transition-transform duration-500">
-        {itemsToShow.map((product) => (
-          <div key={product.id} className="p-2 md:p-4" style={{ width: "25%" }}>
-            <div className="border rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col">
+      <div className="flex transition-transform duration-500 ease-in-out">
+        {itemsToShow.map((product, index) => (
+          <div
+            key={`${product.id}-${index}`}
+            className="p-2 md:p-4"
+            style={{ width: "25%" }}
+          >
+            <div className="border rounded-lg overflow-hidden bg-white shadow-md h-full flex flex-col transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="relative w-full h-48 md:h-64 lg:h-72">
                 <Image
                   src={product.imageSrc}
                   alt={product.name}
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-t-lg"
+                  className="rounded-t-lg transition-opacity duration-300 ease-in-out hover:opacity-90"
                 />
                 <div className="absolute top-2 left-2 flex flex-col space-y-1">
                   {product.label && (
@@ -72,7 +80,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
                   <p className="text-xl font-bold text-red-600">
                     {product.price}
                   </p>
-                  <span className="p-2 rounded-full">
+                  <span className="p-2 rounded-full hover:bg-red-100 transition-colors duration-300">
                     <Link href="/cart">
                       <Icon icon={ShoppingCart} size={24} />
                     </Link>
@@ -84,10 +92,16 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ products }) => {
         ))}
       </div>
       <div className="absolute -bottom-4 right-4 flex space-x-2">
-        <button onClick={handlePrev} className="p-2 rounded-full text-black">
+        <button
+          onClick={handlePrev}
+          className="p-2 rounded-full text-black hover:bg-gray-200 transition-colors duration-300"
+        >
           <Icon icon={MoveLeft} size={24} />
         </button>
-        <button onClick={handleNext} className="p-2 rounded-full text-black">
+        <button
+          onClick={handleNext}
+          className="p-2 rounded-full text-black hover:bg-gray-200 transition-colors duration-300"
+        >
           <Icon icon={MoveRight} size={24} />
         </button>
       </div>
