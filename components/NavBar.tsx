@@ -48,7 +48,7 @@ function NavBar() {
               <SelectBar />
               <Link
                 href="/catalog"
-                className="flex flex-col items-center text-center group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
+                className="flex flex-col items-center text-center group focus:outline-none фф focus:ring-blue-200 hover:text-blue-200"
               >
                 <Icon icon={LayoutDashboard} size={24} />
                 <span>Каталог</span>
@@ -60,14 +60,14 @@ function NavBar() {
             <div className="flex items-center space-x-12">
               <Link
                 href="/contacts"
-                className="flex flex-col items-center font-semibold text-center group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
+                className="flex flex-col items-center font-semibold text-center group   focus:ring-blue-200 hover:text-blue-200"
               >
                 <Icon icon={Phone} size={24} />
                 <span>Контакти</span>
               </Link>
               <Link
                 href="/cart"
-                className="flex flex-col items-center text-center font-semibold group focus:outline-none focus:ring-2 focus:ring-blue-200 hover:text-blue-200"
+                className="flex flex-col items-center text-center font-semibold group   focus:ring-blue-200 hover:text-blue-200"
               >
                 <Icon icon={ShoppingCart} size={24} className="mb-1" />
                 <span>Кошик</span>
