@@ -16,24 +16,20 @@ const slides = [
 ];
 
 const categories = [
-  "Кухонні меблі",
-  "Меблі вітальні",
-  "Меблі спальні",
-  "Меблі для передпокою",
-  "Офісні меблі",
-  "Шафи",
-  "М'які меблі",
-  "Ліжка",
-  "Матраци",
-  "Комоди і тумби",
+  { id: 1, name: "Кухонні меблі" },
+  { id: 2, name: "Меблі вітальні" },
+  { id: 3, name: "Меблі спальні" },
+  { id: 4, name: "Меблі для передпокою" },
+  { id: 5, name: "Офісні меблі" },
+  { id: 6, name: "Шафи" },
+  { id: 7, name: "М'які меблі" },
+  { id: 8, name: "Ліжка" },
+  { id: 9, name: "Матраци" },
+  { id: 10, name: "Комоди і тумби" },
 ];
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -48,12 +44,12 @@ const HeroCarousel = () => {
     <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto mt-5 px-4 md:px-6">
       <div className="hidden md:block w-1/4 p-4 bg-[#F8F8F8]">
         <ul>
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <li
-              key={index}
+              key={category.id}
               className="py-2 text-lg hover:text-blue-600 cursor-pointer"
             >
-              {category}
+              {category.name}
             </li>
           ))}
         </ul>
@@ -87,3 +83,21 @@ const HeroCarousel = () => {
 };
 
 export default HeroCarousel;
+
+
+ // const [categories, setCategories] = useState([]);
+
+  // useEffect(() => {
+    // Функция для загрузки данных из API
+  //   const fetchCategories = async () => {
+  //     try {
+  //       const response = await fetch("/api/categories"); 
+  //       const data = await response.json();
+  //       setCategories(data); 
+  //     } catch (error) {
+  //       console.error("Ошибка при загрузке категорий:", error);
+  //     }
+  //   };
+
+  //   fetchCategories();
+  // }, []); это для бд

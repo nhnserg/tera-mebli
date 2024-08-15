@@ -1,6 +1,7 @@
 "use client";
 import CustomSlider from "@/components/CustomSlider";
 import HeroCarousel from "@/components/HeroCarousel";
+import HitSlider from "@/components/HitSlider";
 import PopularCategories from "@/components/PopularCategories";
 import Stages from "@/components/Stages";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -129,6 +130,10 @@ const Home = () => {
       <div className="container p-6">
         <h2 className="text-2xl font-bold mb-6">Нові товари</h2>
         <CustomSlider products={products} />
+      </div>
+      <div className="container p-6">
+        <h2 className="text-2xl font-bold mb-6">XIT продажу</h2>
+        <HitSlider products={products} />
       </div>
       <Stages />
       <PopularCategories />
