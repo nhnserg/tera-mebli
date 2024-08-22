@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Icon from "./Icon";
+import Icon from "./parts/Icon";
 import { ShoppingCart } from "lucide-react";
 import { Product } from "@/types/types";
 

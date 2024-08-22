@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
-import Icon from "./Icon";
+import Icon from "./parts/Icon";
 import logo from "../public/assets/logo.webp";
 import tiktok from "../public/assets/icons/Social.svg";
 

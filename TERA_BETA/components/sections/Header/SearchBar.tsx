@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Search } from "lucide-react";
-import Icon from "./Icon";
+import Icon from "../../parts/Icon";
 
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState<string>("");

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Icon from "./Icon";
+import Icon from "../../parts/Icon";
 import { LayoutDashboard, Phone } from "lucide-react";
 import Link from "next/link";
-import Modal from "./Modal";
+import Modal from "../../parts/Modal";
 
 interface MenuModalProps {
   show: boolean;

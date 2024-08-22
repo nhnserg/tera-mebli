@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../../parts/Modal";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import google from "../public/assets/icons/google.svg";

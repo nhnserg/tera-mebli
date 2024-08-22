@@ -6,7 +6,7 @@ import {
   Speech,
   Banknote,
 } from "lucide-react";
-import Icon from "./Icon";
+import Icon from "./parts/Icon";
 
 const WhyChooseUs = () => {
   return (

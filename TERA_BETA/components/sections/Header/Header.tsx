@@ -3,15 +3,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, Phone, ShoppingCart, LayoutDashboard } from "lucide-react";
-import Icon from "./Icon";
+import Icon from "../../parts/Icon";
 import AuthModal from "./AuthModal";
 import SearchBar from "./SearchBar";
 import logo from "../public/assets/logo.webp";
 import MenuModal from "./MenuModal";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { SelectBar } from "./SelectBar";
 
-function NavBar() {
+function Header() {
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
@@ -82,4 +81,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import Icon from "./Icon";
+import Icon from "../../parts/Icon";
 import { ShoppingCart, MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import { Product } from "@/types/types";
