@@ -1,33 +1,35 @@
-import { Layout } from '@/components/sections/Layout'
-import { cn } from '@/lib/utils'
-import type { Metadata } from 'next'
-import { Inter as FontSans } from 'next/font/google'
-import './globals.scss'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Banner from "@/components/Banner";
+import NavBar from "@/components/sections/Header/NavBar";
+import Footer from "@/components/Footer";
 
-const fontSans = FontSans({
-	subsets: ['latin'],
-	variable: '--font-sans',
-})
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
-	title: 'Tera',
-	description: 'Shop',
-}
+  title: "Tera-Mebli",
+  description: "Online store",
+};
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang='uk'>
-			<body
-				className={cn(
-					`flex flex-col min-h-screen font-sans antialiased bg-[#f8f8f8] ${fontSans.variable}`
-				)}
-			>
-				<Layout>{children}</Layout>
-			</body>
-		</html>
-	)
+  return (
+    <html lang="uk">
+      <body className={inter.className}>
+        <Banner />
+        <main className="max-w-10xl mx-auto">
+          <NavBar />
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
 }
