@@ -1,8 +1,8 @@
 "use client";
-import CustomSlider from "@/components/CustomSlider";
-import HeroCarousel from "@/components/HeroCarousel";
-import HitSlider from "@/components/HitSlider";
 import PopularCategories from "@/components/PopularCategories";
+import CustomSlider from "@/components/sections/Hero/CustomSlider";
+import HeroCarousel from "@/components/sections/Hero/HeroCarousel";
+import HitSlider from "@/components/sections/Hero/HitSlider";
 import Stages from "@/components/Stages";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
