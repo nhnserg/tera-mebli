@@ -89,7 +89,7 @@ const Home = () => {
       name: 'Елегантне3 ліжко "Верона"',
       brand: "UMa Uta-Major",
       price: "12,499 грн.",
-      label: "Новинка",
+      label: "Новинки",
       labelColor: "bg-green-500",
     },
     {
@@ -116,6 +116,14 @@ const Home = () => {
     },
     {
       id: 14,
+      imageSrc: "/assets/images/krovat.jpeg",
+      name: "Ліжко1",
+      price: "10,000 грн.",
+      label: "ХІТ",
+      labelColor: "bg-[#4E3A9F]",
+    },
+    {
+      id: 15,
       imageSrc: "/assets/images/krovat.jpeg",
       name: "Ліжко1",
       price: "10,000 грн.",
